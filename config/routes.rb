@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'sessions#index'
+  root 'session#index'
 
-  get 'sessions/index'
+  get 'session/index'
   resources :grades
   resources :parents
   resources :students
