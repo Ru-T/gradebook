@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
   # GET /teachers
   def index
     @teachers = Teacher.all
+    current_user = Teacher.find_by_id(session[:password_digest])
   end
 
   # GET /teachers/1
