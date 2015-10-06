@@ -1,4 +1,16 @@
 class SessionController < ApplicationController
-  def index
+
+  def new
+    @session = Session.new
   end
+
+
+  def create
+
+  end
+
+  def destroy
+
+  end  
+
 end
