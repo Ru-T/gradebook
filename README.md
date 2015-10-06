@@ -1,4 +1,8 @@
-[X] Build the data structure, models, and migrations that you’ll need.
-[X] Allow teachers (and only teachers) to log in and log out.
-[X] Allow teachers (and only teachers) to manage all teachers and all students.
-[X] Allow teachers (and only teachers) to manage grades for all students.
+#Description
+
+This program allows teachers to login and take the following actions:
+
+* Create additional teachers
+* Create students that have a teacher
+* Create parents that have a student
+* Create grades for any assignment belonging to a student
