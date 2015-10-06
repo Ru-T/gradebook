@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'session/index'
+
   root 'grades#index'
 
   resources :grades
