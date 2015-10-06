@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'grades#index'
+
   resources :grades
   resources :parents
   resources :students
