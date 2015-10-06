@@ -14,13 +14,13 @@ class SessionController < ApplicationController
         redirect_to session_new_path, notice: "Your login was unsuccessful."
       end
     else
-      redirect to teachers_path if session[:current_user]
+      redirect_to teachers_path if session[:current_user]
     end
   end
 
   def destroy
     session[:current_user] = false
-    redirect to session_new_path
+    redirect_to session_new_path
   end
 
 end
