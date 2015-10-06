@@ -3,13 +3,15 @@
 <h1>Login</h1>
 <p>Please login below.</p>
 
-    <%= form_for(:session) do |f| %>
+    <%= form_tag(session_create_path) do %>
 
-      <p><%= f.label :email %>
-      <%= f.email_field :email %></p>
+      <p><%= label_tag :email %>
+      <%= email_field_tag :email %></p>
 
-      <p><%= f.label :password %>
-      <%= f.password_field :password %></p>
+      <p><%= label_tag :password %>
+      <%= password_field_tag :password %></p>
 
-      <%= f.submit "Log in" %>
+      <%= submit_tag "Log in" %>
     <% end %>
+
+<%= link_to 'Logout', session_destroy_path, method: :delete %>

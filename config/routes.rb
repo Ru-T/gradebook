@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'session#new'
 
   get 'session/new'
+  post 'session/new'
   post 'session/create'
   delete 'session/destroy'
   resources :grades
