@@ -4,7 +4,7 @@ class GradesController < ApplicationController
 
   # GET /grades
   def index
-    @grades = Grade.where(student_id: session[:user_id])
+    @grades = current_user.grades
   end
 
   # GET /grades/1

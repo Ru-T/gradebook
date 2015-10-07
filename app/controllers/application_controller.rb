@@ -10,5 +10,8 @@ class ApplicationController < ActionController::Base
   def no_access
     redirect_to grades_path, notice: "You do not have access to this information." unless session[:user_type] == "Teacher"
   end
-  
+
+  def current_user
+    session[:user_type].constantize.find(session[:user_id]) #returns the user
+  end
 end
