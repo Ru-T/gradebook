@@ -19,8 +19,7 @@ Teachers can log in with an email and password. Teachers can log out.
 
 [ ] Make all pages not accessible unless you are logged in
 [ ] Do something more graceful when students or parents try to log in
-[X] Do something more graceful when email is incorrect
 [ ] Write tests for my session controller actions
 [ ] Install Bootstrap and style the login page, header, etc.
 [ ] Edit teachers view to loop over teachers and look through students within, similar to restaurant menu. Put into a table with <thead>, <tbody>, <td>, <tr>. Put links outside of close table tag.
-[ ]
+[ ] Add radio button to form to have users self-identify, then include longer if/else statement to say which type of user we have. OR just check for teacher, if not a teacher, check for student, etc. until else.
