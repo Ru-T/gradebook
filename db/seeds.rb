@@ -6,7 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Teacher.create(name: "Mrs. Rollins", email: "rollins@mail.com", password: "rollinsisateacher")
-Teacher.create(name: "Mr. Fidel", email: "fidel@mail.com", password: "fidelisateacher")
+t1 = Teacher.create!(name: "Mrs. Rollins", email: "rollins@mail.com", password: "rollinsisateacher")
+t2 = Teacher.create!(name: "Mr. Fidel", email: "fidel@mail.com", password: "fidelisateacher")
 
-Student.create(name: "Ruti", email: "ruti@mail.com", password: "rutiisastudent", teacher_id: 1)
+s1 = Student.create!(name: "Ruti", email: "ruti@mail.com", password: "rutiisastudent", teacher_id: 1)
+
+t1.students << s1
+
+t1.save

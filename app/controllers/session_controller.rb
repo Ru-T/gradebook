@@ -7,11 +7,11 @@ class SessionController < ApplicationController
   def create
     if request.post?
       t = Teacher.find_by_email(params[:email])
-      if t.authenticate(params[:password])
+      if t && t.authenticate(params[:password])
         session[:current_user] = true
         redirect_to teachers_path, notice: "You have succesfully logged in!"
       else
-        redirect_to session_new_path, notice: "Your login was unsuccessful."
+        redirect_to session_new_path, notice: "Login failed: invalid email or password."
       end
     else
       redirect_to teachers_path if session[:current_user]
@@ -20,7 +20,14 @@ class SessionController < ApplicationController
 
   def destroy
     session[:current_user] = false
-    redirect_to session_new_path
+    redirect_to session_new_path, notice: "You have logged out."
   end
+  #
+  # private def set_params
+  #   params.require(:session).permit(:name, :email, :password)
+  # end
 
 end
+
+#do you need strong params?
+#if t - sends to else and redirects

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'session/new'
   post 'session/create'
-  delete 'session/destroy'
+  delete 'logout' => 'session#destroy'
   resources :grades
   resources :parents
   resources :students
