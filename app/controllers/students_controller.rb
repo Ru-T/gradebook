@@ -47,9 +47,6 @@ class StudentsController < ApplicationController
     redirect_to students_url, notice: 'Student was successfully destroyed.'
   end
 
-  def no_access
-    redirect_to grades_path, notice: "You do not have access to this information."
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

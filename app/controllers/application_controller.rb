@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     redirect_to session_new_path, notice: "You must log in to access this page" unless session[:user_id]
   end
 
+  def no_access
+    redirect_to grades_path, notice: "You do not have access to this information." unless session[:user_type] == "Teacher"
+  end
+  
 end
