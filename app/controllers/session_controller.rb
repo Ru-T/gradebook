@@ -7,7 +7,7 @@ class SessionController < ApplicationController
   def create
     t = Teacher.find_by_email(params[:email])
     if t && t.authenticate(params[:password])
-      session[:teacher_id] = t.id
+      session[:user_id] = t.id
       redirect_to teachers_path, notice: "You have succesfully logged in!"
     else
       redirect_to session_new_path, alert: "Login failed: invalid email or password."
@@ -15,7 +15,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    session[:teacher_id] = nil
+    session[:user_id] = nil
     redirect_to session_new_path, notice: "You have logged out."
   end
 

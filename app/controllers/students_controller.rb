@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
 
   # GET /students
   def index
-    @students = Student.where(teacher_id: session[:teacher_id])
+    @students = Student.where(teacher_id: session[:user_id])
   end
 
   # GET /students/1
