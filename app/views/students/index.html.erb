@@ -8,11 +8,12 @@
         <tr>
           <th class="success">Student Name</th>
           <th class="success">Student Email</th>
-          <th></th>
-          <th colspan="3"></th>
+          <th class="success"></th>
+          <th class="success"><%= link_to 'New Grade', new_grade_path(student_id: student.id) %></th>
+          <th class="success"><%= link_to 'New Parent', new_parent_path(student_id: student.id) %></th>
+          <th colspan="3" class="success"></th>
         </tr>
       </thead>
-
         <tbody>
           <tr>
             <td><%= student.name %></td>
@@ -22,13 +23,12 @@
             <td><%= link_to 'Edit', edit_student_path(student) %></td>
             <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
-          <%= link_to 'New Grade', new_grade_path(student_id: student.id) %>|
-          <%= link_to 'New Parent', new_parent_path(student_id: student.id) %>
       <thead>
         <tr>
           <th class="success">Parent Name</th>
           <th class="success">Parent Email</th>
-          <th colspan="3"></th>
+          <th class="success"></th>
+          <th class="success" colspan="3"></th>
         </tr>
       </thead>
         <% student.parents.each do |parent| %>
@@ -46,7 +46,7 @@
           <th class="success">Date</th>
           <th class="success">Assignment Name</th>
           <th class="success">Grade</th>
-          <th colspan="3"></th>
+          <th class="success" colspan="3"></th>
         </tr>
       </thead>
         <% student.grades.each do |grade| %>
