@@ -6,8 +6,8 @@ class TeachersControllerTest < ActionController::TestCase
   end
 
   def setup
-    session[:user_id] = 1
-    session[:user_type] = "Teacher"
+    session[:user_id] = teachers(:one).id
+    session[:user_type] = “Teacher”
   end
 
   test "should get index" do

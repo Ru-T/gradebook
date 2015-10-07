@@ -6,7 +6,7 @@ class ParentsControllerTest < ActionController::TestCase
   end
 
   def setup
-    session[:user_id] = 1
+    session[:user_id] = parents(:one).id
     session[:user_type] = "Parent"
   end
 

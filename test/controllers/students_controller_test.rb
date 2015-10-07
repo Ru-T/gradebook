@@ -6,7 +6,7 @@ class StudentsControllerTest < ActionController::TestCase
   end
 
   def setup
-    session[:user_id] = 1
+    session[:user_id] = students(:one).id
     session[:user_type] = "Student"
   end
 
