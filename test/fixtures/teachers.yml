@@ -3,7 +3,7 @@
 one:
   name: Mason
   email: mason@example.com
-  password: "masonisateacher"
+  password: <%= BCrypt::Password.create("catsdrool") %>
 
 two:
   name: MyString
