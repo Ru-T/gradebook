@@ -17,9 +17,13 @@ Teachers can log in with an email and password. Teachers can log out.
 
 ##To Do
 
-[ ] Make all pages not accessible unless you are logged in
-[ ] Do something more graceful when students or parents try to log in
-[ ] Write tests for my session controller actions
-[ ] Install Bootstrap and style the login page, header, etc.
-[ ] Edit teachers view to loop over teachers and look through students within, similar to restaurant menu. Put into a table with <thead>, <tbody>, <td>, <tr>. Put links outside of close table tag.
+[ ] If I'm already logged in and I hit the login page, redirect me to my view page. Best solution: in routes, pick the thing that users should see after they login, i.e. teachers/index. With redirect to login page, if you're logged out, you'll go to the login page.
+[ ] Set root to be an action that just redirects to other views depending on who you are, similar to login create action. (Root should NOT be login page)
+[ ] Make all pages not accessible unless you are logged in on all three controllers.
+[ ] Teachers can only see their own students => store their ID in the session instead of true/false and set to nil upon logout. Set user_id and user_type => session :[user_id] && session: [user_type == "teacher"]
 [ ] Add radio button to form to have users self-identify, then include longer if/else statement to say which type of user we have. OR just check for teacher, if not a teacher, check for student, etc. until else.
+[ ] Edit teachers view to loop over teachers and look through students within, similar to restaurant menu. Put into a table with <thead>, <tbody>, <td>, <tr>. Put links outside of close table tag.
+[ ] Write tests for my session controller actions
+[ ] Write integration test, especially for teacher permissions on their own students
+[ ] Install Bootstrap and style the login page, header, etc.
+[ ] Specify if header should say login or logout based on session value (in a header partial with HTML. ie.if session[:current_user], log out, else login.
