@@ -47,10 +47,6 @@ class TeachersController < ApplicationController
     redirect_to teachers_url, notice: 'Teacher was successfully destroyed.'
   end
 
-  def no_access
-    redirect_to grades_path, notice: "You do not have access to this information." unless session[:user_type] == "Teacher"
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_teacher
