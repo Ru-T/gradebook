@@ -1,6 +1,7 @@
 class ParentsController < ApplicationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
+  before_action :no_access
 
   # GET /parents
   def index
@@ -44,6 +45,10 @@ class ParentsController < ApplicationController
   def destroy
     @parent.destroy
     redirect_to parents_url, notice: 'Parent was successfully destroyed.'
+  end
+
+  def no_access
+    redirect_to grades_path, notice: "You do not have access to this information."
   end
 
   private
