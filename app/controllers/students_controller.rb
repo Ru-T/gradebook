@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :logged_in?
+  before_action :no_access
 
   # GET /students
   def index
@@ -44,6 +45,10 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     redirect_to students_url, notice: 'Student was successfully destroyed.'
+  end
+
+  def no_access
+    redirect_to grades_path, notice: "You do not have access to this information."
   end
 
   private
