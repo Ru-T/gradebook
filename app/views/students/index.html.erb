@@ -1,6 +1,8 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
+  <p class="text-right"><%= link_to 'Logout', logout_path, method: :delete %></p>  
+
   <h1 class="text-center">Students</h1>
     <% @students.each do |student| %>
       <table class="table table-bordered">
@@ -69,6 +71,4 @@
 
   <%= link_to 'New Student', new_student_path %> |
   <%= link_to 'New Teacher', new_teacher_path %>
-
-  <p><%= link_to 'Logout', logout_path, method: :delete %></p>
 </div>

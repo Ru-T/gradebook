@@ -1,37 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Grades</h1>
+  <p class="text-right"><%= link_to 'Logout', logout_path, method: :delete %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Assignment name</th>
-      <th>Grade</th>
-      <th>Student</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1 class="text-center">Listing Grades</h1>
 
-  <tbody>
-    <% @grades.each do |grade| %>
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= grade.assignment_name %></td>
-        <td><%= grade.grade %></td>
-        <td><%= grade.student_id %></td>
+        <th class="success">Date</th>
+        <th class="success">Assignment name</th>
+        <th class="success">Grade</th>
+        <th class="success">Student Id</th>
         <% if session[:user_type] == "Teacher"%>
-          <td><%= link_to 'Show', grade %></td>
-          <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-          <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th colspan="3" class="success"></th>
         <% end %>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @grades.each do |grade| %>
+        <tr>
+          <td><%= grade.date %></td>
+          <td><%= grade.assignment_name %></td>
+          <td><%= grade.grade %></td>
+          <td><%= grade.student_id %></td>
+          <% if session[:user_type] == "Teacher"%>
+            <td><%= link_to 'Show', grade %></td>
+            <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
+            <td><%= link_to 'Destroy', grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<% if session[:user_type] == "Teacher"%>
-  <%= link_to 'New Grade', new_grade_path %>
-<% end %>
+  <br>
 
-<p><%= link_to 'Logout', logout_path, method: :delete %></p>
+  <% if session[:user_type] == "Teacher"%>
+    <%= link_to 'New Grade', new_grade_path %>
+  <% end %>
+</div>
