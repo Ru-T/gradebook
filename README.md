@@ -17,9 +17,6 @@ Teachers can log in with an email and password. Teachers can log out.
 
 ##To Do
 
-[ ] Parents should be able to see their students grades
-[ ] Teachers should be able to see all of their students grades
-
 [ ] Fix tests for controller actions
 [ ] Write tests for my session controller actions
 [ ] Write integration test, especially for teacher permissions on their own students
