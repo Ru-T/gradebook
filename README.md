@@ -14,3 +14,9 @@ Teachers can log in with an email and password. Teachers can log out.
 ##Database Structure
 
 ![alt tag](https://github.com/Ru-T/gradebook/blob/master/app/assets/images/database_structure.png)
+
+##To Do
+
+[ ] Make all pages not accessible unless you are logged in
+[ ] Do something more graceful when students or parents try to log in
+[ ] Write tests for my session controller actions
