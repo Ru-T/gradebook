@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  #before_action :logged_in?
+  before_action :logged_in?
 
   # GET /students
   def index
@@ -56,8 +56,4 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:name, :email, :password_digest, :teacher_id)
     end
-
-    # def logged_in?
-    #   redirect to session_new_path, notice: "You must log in to do that" unless session[:current_user]
-    # end
 end
