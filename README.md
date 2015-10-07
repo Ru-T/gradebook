@@ -17,7 +17,11 @@ Teachers can log in with an email and password. Teachers can log out.
 
 ##To Do
 
-[ ] Set root to be an action that just redirects to other views depending on who you are, similar to login create action. (Root should NOT be login page)
+[ ] Students should see their own grades
+[ ] Parents should be able to see their students grades
+[ ] Students and parents should not be able to see any other information
+
+[ ] Fix tests for controller actions
 [ ] Write tests for my session controller actions
 [ ] Write integration test, especially for teacher permissions on their own students
 

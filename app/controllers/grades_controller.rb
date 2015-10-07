@@ -3,7 +3,7 @@ class GradesController < ApplicationController
 
   # GET /grades
   def index
-    @grades = Grade.all
+    @grades = Grade.where(student_id: session[:user_id])
   end
 
   # GET /grades/1
