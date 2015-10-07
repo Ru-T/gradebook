@@ -12,7 +12,7 @@ class SessionController < ApplicationController
       session[:user_id] = u.id
       session[:user_type] = u.class.to_s
       if session[:user_type] == "Teacher"
-        redirect_to teachers_path, notice: "You have succesfully logged in!" #send(u.class.to_s.lowercase.pluralize + "_path")
+        redirect_to students_path, notice: "You have succesfully logged in!" #send(u.class.to_s.lowercase.pluralize + "_path")
       else
         redirect_to grades_path, notice: "You have succesfully logged in!"
       end

@@ -19,10 +19,14 @@
     <%= f.label :grade %><br>
     <%= f.number_field :grade %>
   </div>
-  <div class="field">
-    <%= f.label :student_id %><br>
-    <%= f.number_field :student_id %>
-  </div>
+  <% if params[:student_id] %>
+    <%= f.hidden_field :student_id %>
+  <% else %>
+    <div class="field">
+      <%= f.label :student_id %><br>
+      <%= f.number_field :student_id %>
+    </div>
+  <% end %>
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_field :date %>

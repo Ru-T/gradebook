@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'teachers#index'
+  root 'students#index'
 
   get 'session/new'
   post 'session/create'
