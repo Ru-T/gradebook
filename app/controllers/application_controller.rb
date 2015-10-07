@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
   def logged_in?
     redirect_to session_new_path, notice: "You must log in to access this page" unless session[:current_user]
   end
+  
 end
