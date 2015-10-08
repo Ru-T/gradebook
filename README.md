@@ -24,7 +24,7 @@ All users can log in and can reset their password. The password is stored in an 
 
 ##To Do
 
-[ ] Save new password as password for user.
-[ ] Fix tests for controller actions
-[ ] Write tests for my session controller actions
-[ ] Write integration test, especially for teacher permissions on their own students
+- [ ] Save new password as password for user.
+- [ ] Fix tests for controller actions
+- [ ] Write tests for my session controller actions
+- [ ] Write integration test, especially for teacher permissions on their own students
