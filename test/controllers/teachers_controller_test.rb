@@ -7,12 +7,12 @@ class TeachersControllerTest < ActionController::TestCase
 
   def setup
     session[:user_id] = teachers(:one).id
-    session[:user_type] = “Teacher”
+    session[:user_type] = "Teacher"
   end
 
   test "should get index" do
     get :index
-    assert_redirected_to session_new_path
+    assert_response :success
     assert_not_nil assigns(:teachers)
   end
 
@@ -23,7 +23,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test "should create teacher" do
     assert_difference('Teacher.count') do
-      post :create, teacher: { email: @teacher.email, name: @teacher.name, password_digest: @teacher.password_digest }
+      post :create, teacher: { email: @teacher.email, name: @teacher.name, password: @teacher.password }
     end
 
     assert_redirected_to teacher_path(assigns(:teacher))
@@ -41,7 +41,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test "should update teacher" do
     patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password_digest: @teacher.password_digest }
-    assert_redirected_to teachers_new_path(assigns(:teacher))
+    assert_redirected_to teachers_path(assigns(:teacher))
   end
 
   test "should destroy teacher" do

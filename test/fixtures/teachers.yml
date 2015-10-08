@@ -3,9 +3,9 @@
 one:
   name: Mason
   email: mason@example.com
-  password: <%= BCrypt::Password.create("catsdrool") %>
+  password_digest: <%= BCrypt::Password.create("catsdrool") %>
 
 two:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+  name: Kelly
+  email: kelly@example.com
+  password_digest: <%= BCrypt::Password.create("string") %>

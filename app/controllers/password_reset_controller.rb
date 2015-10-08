@@ -7,7 +7,7 @@ class PasswordResetController < ApplicationController
     u ||= Student.find_by_email(params[:email])
     u ||= Parent.find_by_email(params[:email])
     if u
-      u.password = (params[:password])
+      u.password = password # this one line is incorrect
       redirect_to session_new_path, notice: "Your password has been reset. Please log in."
     else
       redirect_to session_new_path, alert: "You cannot reset your password at this time."
