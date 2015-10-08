@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   get 'password_reset/new'
 
-  get 'password_reset/create'
+  post 'password_reset/create'
 
-  get 'password_reset/edit'
+  post 'password_reset/edit'
 
   root 'students#index'
 

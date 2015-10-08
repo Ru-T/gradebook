@@ -1,2 +1,15 @@
-<h1>PasswordReset#edit</h1>
-<p>Find me in app/views/password_reset/edit.html.erb</p>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<div class="container">
+  <h1>Enter password</h1>
+  <p>Create a new password below.</p>
+
+      <%= form_tag(password_reset_create_path) do %>
+
+        <p><%= label_tag :password %>
+        <%= password_field_tag :password %></p>
+
+        <%= submit_tag "Submit" %>
+      <% end %>
+</div>
