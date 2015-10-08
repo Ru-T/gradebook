@@ -4,7 +4,7 @@ one:
   name: Ruti
   email: ruti@mail.com
   password_digest: <%= BCrypt::Password.create("rutiisastudent") %>
-  teacher_id: 1
+  teacher: :one
 
 two:
   name: Ilan

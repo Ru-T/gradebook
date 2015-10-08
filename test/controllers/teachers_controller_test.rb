@@ -37,7 +37,7 @@ class TeachersControllerTest < ActionController::TestCase
   end
 
   test "should update teacher" do
-    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password_digest: @teacher.password_digest }
+    patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password: @teacher.password }
     assert_redirected_to teachers_path(assigns(:teacher))
   end
 
