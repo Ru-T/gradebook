@@ -2,6 +2,7 @@ require 'test_helper'
 
 class TeachersControllerTest < ActionController::TestCase
   setup do
+    @teacher = teachers(:one)
     session[:user_id] = teachers(:one).id
     session[:user_type] = "Teacher"
   end
