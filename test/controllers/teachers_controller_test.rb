@@ -38,7 +38,7 @@ class TeachersControllerTest < ActionController::TestCase
 
   test "should update teacher" do
     patch :update, id: @teacher, teacher: { email: @teacher.email, name: @teacher.name, password: @teacher.password }
-    assert_redirected_to teachers_path(assigns(:teacher))
+    assert_response :success
   end
 
   test "should destroy teacher" do
