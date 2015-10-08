@@ -19,15 +19,16 @@ class LoginLogoutTest < ActionDispatch::IntegrationTest
 
   test "can create students" do
     post login_path, session: {email: "mason@example.com", password: "(catsdrool)"} # real info from fixture!
-    post students_path, student: {name: "StudentName", email: "", password: "()", teacher_id: 1} # hit create action to make a new student
+    post students_path, student: {name: "StudentName", email: "name@mail.com", password: "(name)", teacher_id: 1} # hit create action to make a new student
     get students_path
     assert_select "tr", 1
   end
-  #
-  #   # assert_select "a[href=#{logout_path}]", 1 #checks if there is a logout link on the page
-  #
-  # test "logged in teacher does not see other students" do
-  #   # write this test for tonight's homework!
-  # end
+
+  test "logged in teacher does not see other students" do
+    post login_path, session: {email: "mason@example.com", password: "(catsdrool)"}# write this test for tonight's homework!
+    post students_path, student: {name: "StudentName", email: "name@mail.com", password: "(name)", teacher_id: 1}
+    assert response.body.include?("Ruti")
+    refute response.body.include?("Ilan")
+  end
 
 end

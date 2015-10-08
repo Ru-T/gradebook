@@ -2,13 +2,10 @@ require 'test_helper'
 
 class ParentsControllerTest < ActionController::TestCase
   setup do
-    @parent = parents(:one)
-  end
-
-  def setup
     session[:user_id] = parents(:one).id
     session[:user_type] = "Parent"
   end
+
 
   test "should get index" do
     get :index

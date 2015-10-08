@@ -2,10 +2,6 @@ require 'test_helper'
 
 class TeachersControllerTest < ActionController::TestCase
   setup do
-    @teacher = teachers(:one)
-  end
-
-  def setup
     session[:user_id] = teachers(:one).id
     session[:user_type] = "Teacher"
   end
